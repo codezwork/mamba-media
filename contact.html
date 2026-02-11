@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAMBA - Contacts</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="subpage">
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="3" width="7" height="7" fill="#ff4444" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" fill="#ff4444" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" fill="#ff4444" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" fill="#ff4444" rx="1"/>
+        </svg>
+        <span>MAMBA MEDIA</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="portfolio.html">PORTFOLIO</a></li>
+        <li><a href="contact.html">CONTACTS</a></li>
+      </ul>
+      <div class="nav-dots" id="nav-toggle">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="portfolio.html">PORTFOLIO</a></li>
+      <li><a href="contact.html">CONTACTS</a></li>
+    </ul>
+  </div>
+
+  <div class="page-background">
+     <svg class="connecting-line" viewBox="0 0 800 400" style="opacity: 0.2">
+        <path d="M50,200 Q200,100 400,200 T750,150" stroke="#ff4444" stroke-width="2" fill="none"/>
+      </svg>
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <h1 class="page-title">GET IN <span class="highlight">TOUCH</span></h1>
+      
+      <div class="contact-grid">
+        <div class="contact-info-block">
+          <h3>LET'S BUILD SOMETHING</h3>
+          <p>Whether you have a specific project in mind or just want to explore the possibilities, our team is ready to deliver.</p>
+          
+          <div class="info-items">
+            <div class="info-item">
+              <strong>LOCATION:</strong><br>
+              We are always on move<br>
+              We are everywhere!
+            </div>
+            <div class="info-item">
+              <strong>PHONE:</strong><br>
+              +91 97670 74984
+            </div>
+            <div class="info-item">
+              <strong>EMAIL:</strong><br>
+              the7s.pvt@gmail.com
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <input type="text" placeholder="YOUR NAME" required>
+          <input type="email" placeholder="EMAIL ADDRESS" required>
+          <select required>
+            <option value="" disabled selected>SUBJECT</option>
+            <option value="web">Web Development</option>
+            <option value="design">UI/UX Design</option>
+            <option value="other">Other</option>
+          </select>
+          <textarea placeholder="TELL US ABOUT YOUR PROJECT" rows="5" required></textarea>
+          <button type="submit" class="cta-button">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+      </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

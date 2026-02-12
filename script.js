@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Smooth scrolling for hash links (only targets links that start with #)
+  // Smooth scrolling for hash links
   const hashLinks = document.querySelectorAll('a[href^="#"]');
   hashLinks.forEach(link => {
     link.addEventListener('click', function(e) {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Intersection Observer for scroll animations (Services, Testimonials, etc)
+  // Intersection Observer for scroll animations
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -93,8 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const ctaButtons = document.querySelectorAll('.cta-button');
   ctaButtons.forEach(btn => {
     btn.addEventListener('click', function(e) {
-      // Check if it's a form submit button or link
-      if(this.tagName === 'A') return; // let links navigate naturally unless prevented
+      if(this.tagName === 'A') return;
       
       const ripple = document.createElement('span');
       const rect = this.getBoundingClientRect();
@@ -125,60 +124,42 @@ document.addEventListener('DOMContentLoaded', function() {
   const portfolioGrid = document.getElementById('portfolio-grid-dynamic');
   
   if (portfolioGrid) {
-    // 1. JSON Dictionary
-    const projectsData = [
-      {
-        id: 1,
-        title: "TATA Mine Project",
-        image: "https://drive.google.com/thumbnail?id=1Xh51Ayw3opBZ74qNkb2GPKJNnAM9ETaj&sz=w400",
-        excerpt: "A comprehensive digital tracking solution tailored for heavy mining operations.",
-        details: "The TATA Mine Project required an aggressive timeline to deploy a fully responsive platform for on-site managers. Our team mapped out wireframes, designed custom UI elements, and integrated real-time tracking APIs. The result improved site efficiency by 24% in the first quarter."
-      },
-      {
-        id: 2,
-        title: "Fly Store",
-        image: "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w400",
-        excerpt: "An e-commerce experience designed for modern streetwear.",
-        details: "Fly Store is a conceptual e-commerce platform that challenges traditional shopping layouts. By utilizing asymmetrical grids and high-contrast typography, we created a digital storefront that speaks directly to Gen-Z shoppers. Complete with payment gateway integration and inventory management."
-      },
-      {
-        id: 3,
-        title: "Glitch The Matrix",
-        image: "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w400",
-        excerpt: "An interactive, WebGL-powered promotional campaign site.",
-        details: "Built to promote an upcoming sci-fi indie game, 'Glitch The Matrix' pushes the boundaries of browser rendering. Using Three.js and custom shaders, users navigate through a 3D environment right from their browser, finding hidden clues about the game's lore."
-      },
-      {
-         id: 4,
-         title: "CodeZ Platform",
-         image: "https://drive.google.com/thumbnail?id=1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5&sz=w400",
-         excerpt: "An online learning portal for budding programmers.",
-         details: "CodeZ approached MAMBA to rethink how students learn to code online. We built an in-browser code editor paired with dynamic video lesson panels. The platform handles thousands of concurrent users running Python and JavaScript directly in the browser safely."
-      }
-    ];
-
-    // 2. Load data into page
-    projectsData.forEach(project => {
-      const row = document.createElement('div');
-      row.className = 'portfolio-row';
-      row.innerHTML = `
-        <img src="${project.image}" alt="${project.title}">
-        <div class="portfolio-row-content">
-          <h3>${project.title}</h3>
-          <p>${project.excerpt}</p>
-        </div>
-      `;
-      
-      // Add intersection observer right away
-      row.style.opacity = '0';
-      row.style.transform = 'translateY(30px)';
-      observer.observe(row);
-      
-      // 3. Attach click event for modal
-      row.addEventListener('click', () => openModal(project));
-      
-      portfolioGrid.appendChild(row);
-    });
+    // 1. Fetch JSON Data
+    fetch('projects.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(projectsData => {
+        // 2. Load data into page inside the Fetch promise
+        projectsData.forEach(project => {
+          const row = document.createElement('div');
+          row.className = 'portfolio-row';
+          row.innerHTML = `
+            <img src="${project.image}" alt="${project.title}">
+            <div class="portfolio-row-content">
+              <h3>${project.title}</h3>
+              <p>${project.excerpt}</p>
+            </div>
+          `;
+          
+          // Add intersection observer right away
+          row.style.opacity = '0';
+          row.style.transform = 'translateY(30px)';
+          observer.observe(row);
+          
+          // 3. Attach click event for modal
+          row.addEventListener('click', () => openModal(project));
+          
+          portfolioGrid.appendChild(row);
+        });
+      })
+      .catch(error => {
+        console.error('There was a problem loading the project data:', error);
+        portfolioGrid.innerHTML = '<p style="text-align:center; padding:20px;">Unable to load projects. Please try again later.</p>';
+      });
 
     // 4. Modal Handling Logic
     const modal = document.getElementById('project-modal');
@@ -192,21 +173,30 @@ document.addEventListener('DOMContentLoaded', function() {
       modalTitle.textContent = project.title;
       modalDetails.textContent = project.details;
       
-      // Reset scroll position to top when opening a new project
-      modal.scrollTop = 0; 
-      
+      // Reset scroll to top of modal when opening
+      modal.scrollTop = 0;
+
       modal.classList.add('show');
-      document.body.style.overflow = 'hidden'; // prevent background page from scrolling
+      document.body.style.overflow = 'hidden'; // prevent background scroll
     }
 
     function closeModal() {
       modal.classList.remove('show');
-      document.body.style.overflow = 'auto'; // restore background page scroll
+      document.body.style.overflow = 'auto'; // restore background scroll
     }
 
-    closeBtn.addEventListener('click', closeModal);
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
     
-    // Allow closing if user hits the ESC key
+    // Close modal if user clicks outside content
+    window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close on Escape key
     window.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && modal.classList.contains('show')) {
         closeModal();

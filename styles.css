@@ -42,10 +42,6 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: bold;
-  font-size: 18px;
-  letter-spacing: 2px;
   text-decoration: none;
   color: #ffffff;
   transition: opacity 0.3s ease;
@@ -89,6 +85,19 @@ body {
 
 .nav-dots .dot:hover {
   background: #ff4444;
+}
+
+.nav-logo-img {
+  height: 15px; /* This sets the height of the navbar */
+  width: auto;  /* This preserves the aspect ratio of your logo */
+  display: block;
+}
+
+/* Optional: Mobile adjustments if your logo is very wide */
+@media (max-width: 768px) {
+  .nav-logo-img {
+    height: 20px; /* Slightly smaller on mobile to save space */
+  }
 }
 
 /* Mobile Menu */

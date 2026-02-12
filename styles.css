@@ -96,7 +96,7 @@ body {
 /* Optional: Mobile adjustments if your logo is very wide */
 @media (max-width: 768px) {
   .nav-logo-img {
-    height: 20px; /* Slightly smaller on mobile to save space */
+    height: 10px; /* Slightly smaller on mobile to save space */
   }
 }
 

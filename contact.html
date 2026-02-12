@@ -6,6 +6,22 @@
   <title>MAMBA MEDIA - Contacts</title>
   <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1RaypnY6XjJvHMWHVdOiwYIGFoILGy0l2&sz=w400">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* New styles for the form success message */
+    #form-message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .success-msg {
+      background: rgba(40, 167, 69, 0.2);
+      border: 1px solid #28a745;
+      color: #28a745;
+    }
+  </style>
 </head>
 <body class="subpage">
   <nav class="navbar">
@@ -66,24 +82,103 @@
           </div>
         </div>
 
-        <form class="contact-form">
-          <input type="text" placeholder="YOUR NAME" required>
-          <input type="email" placeholder="EMAIL ADDRESS" required>
-          <select required>
-            <option value="" disabled selected>SUBJECT</option>
-            <option value="web">Web Development</option>
-            <option value="design">UI/UX Design</option>
-            <option value="other">Other</option>
-          </select>
-          <textarea placeholder="TELL US ABOUT YOUR PROJECT" rows="5" required></textarea>
-          <button type="submit" class="cta-button">SEND MESSAGE</button>
-        </form>
-      </div>
+        <div class="form-wrapper" style="width: 100%;">
+            
+            <script type="text/javascript">var submitted=false;</script>
+            
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+                onload="if(submitted) {document.getElementById('contact-form').reset(); document.getElementById('form-message').style.display='block';}">
+            </iframe>
+
+            <form class="contact-form" id="contact-form"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSfWLSCc5lAoT4TKSL-vFwJXP_lyEewfcG6HM8qXUCbOkxd1_w/formResponse" 
+                method="POST" 
+                target="hidden_iframe" 
+                onsubmit="submitted=true;">
+                
+                <input type="text" name="entry.1588587397" placeholder="YOUR NAME" required>
+                
+                <input type="email" name="entry.524054552" placeholder="EMAIL ADDRESS" required>
+                
+                <select name="entry.1019250997" required>
+                    <option value="" disabled selected>SUBJECT</option>
+                    <option value="web">Web Development</option>
+                    <option value="design">UI/UX Design</option>
+                    <option value="other">Other</option>
+                </select>
+                
+                <textarea name="entry.1057548089" placeholder="TELL US ABOUT YOUR PROJECT" rows="5" required></textarea>
+                
+                <button type="submit" class="cta-button">SEND MESSAGE</button>
+            </form>
+
+            <div id="form-message" class="success-msg">
+                Message Sent! We'll get back to you shortly.
+            </div>
+        </div>
+        </div>
     </div>
   </section>
 
   <footer class="footer">
-      </footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="mamba-media-logo.svg" alt="Mamba Media" class="nav-logo-img">
+          </div>
+          <div class="contact-info">
+            <p>+91 97670 74984</p>
+            <p>the7s.pvt@gmail.com</p>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="portfolio.html">PORTFOLIO</a></li>
+              <li><a href="contact.html">CONTACTS</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <ul>
+              <li><a href="#about">ABOUT</a></li>
+              <li><a href="#career">CAREER</a></li>
+              <li><a href="#support">SUPPORT US</a></li>
+              <li><a href="#sitemap">SITEMAP</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>A subsidiary firm of ©7Brothers.Co™</p>
+        <div class="footer-dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

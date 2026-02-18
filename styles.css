@@ -84,7 +84,7 @@ body {
 .nav-dots .dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 0%;
   background: #444;
   transition: background 0.3s ease;
 }

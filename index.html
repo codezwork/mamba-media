@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MAMBA MEDIA- We Bring Your Business Online</title>
   <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1RaypnY6XjJvHMWHVdOiwYIGFoILGy0l2&sz=w400">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,37 +35,40 @@
     </ul>
   </div>
 
-  <section class="hero" id="home">
-    <div class="hero-background">
-      <div class="thinker-statues">
-        <div class="statue statue-1"></div>
-        <div class="statue statue-2"></div>
-        <div class="statue statue-3"></div>
-        <div class="laptop"></div>
+  <section class="hero-spacer" id="home">
+    <div class="hero-sticky-container">
+      
+      <div id="canvas-container"></div>
+      
+      <div class="hero-stage stage-1 active">
+        <div class="hero-content centered">
+          <h1>A <span class="highlight">GAME CHANGING</span><br>WEB DEV COMPANY</h1>
+          <a href="contact.html" class="cta-button">GET IN TOUCH</a>
+        </div>
       </div>
-      <div class="floating-dots">
-        <div class="floating-dot" style="top: 20%; left: 10%;"></div>
-        <div class="floating-dot" style="top: 40%; left: 25%;"></div>
-        <div class="floating-dot" style="top: 15%; right: 15%;"></div>
-        <div class="floating-dot" style="top: 35%; right: 8%;"></div>
-        <div class="floating-dot" style="bottom: 30%; left: 20%;"></div>
+
+      <div class="hero-stage stage-2">
+        <div class="corner-text top-left">GLOBAL<br><span class="highlight">REACH</span></div>
+        <div class="corner-text top-right">LOCAL<br><span class="highlight">ROOTS</span></div>
+        <div class="corner-text bottom-left">24/7<br><span class="highlight">SUPPORT</span></div>
+        <div class="corner-text bottom-right">FAST<br><span class="highlight">DEPLOY</span></div>
       </div>
-      <svg class="connecting-line" viewBox="0 0 800 400">
-        <path d="M50,200 Q200,100 400,200 T750,150" stroke="#ff4444" stroke-width="2" fill="none" opacity="0.6"/>
-      </svg>
-    </div>
-    <div class="hero-content">
-      <h1>A <span class="highlight">GAME CHANGING</span><br>WEB DEV COMPANY</h1>
-      <a href="contact.html" class="cta-button" style="text-decoration: none; display: inline-block;">GET IN TOUCH</a>
-    </div>
-    <div class="side-controls">
-      <div class="control-dot active"></div>
-      <div class="control-dot"></div>
-      <div class="control-dot"></div>
+
+      <div class="hero-stage stage-3">
+        <div class="hero-content centered">
+          <h1>PRECISION IN<br><span class="highlight">EVERY PIXEL</span></h1>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>SCROLL TO EXPLORE</span>
+        <div class="mouse"><div class="wheel"></div></div>
+      </div>
+
     </div>
   </section>
 
-  <section class="services">
+  <section class="services" id="services">
     <div class="container">
       <h2>OUR SERVICES</h2>
       <div class="services-grid">

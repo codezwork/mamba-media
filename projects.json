@@ -3,6 +3,7 @@
     "id": 1,
     "title": "TATA Mine Project",
     "image": "https://drive.google.com/thumbnail?id=1Xh51Ayw3opBZ74qNkb2GPKJNnAM9ETaj&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1Xh51Ayw3opBZ74qNkb2GPKJNnAM9ETaj&sz=w1920",
     "excerpt": "A comprehensive digital tracking solution tailored for heavy mining operations.",
     "details": "The TATA Mine Project required an aggressive timeline to deploy a fully responsive platform for on-site managers. Our team mapped out wireframes, designed custom UI elements, and integrated real-time tracking APIs. The result improved site efficiency by 24% in the first quarter."
   },
@@ -10,6 +11,7 @@
     "id": 2,
     "title": "ProTrack",
     "image": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w1920",
     "excerpt": "A complete solution to your Productivity tracking needs.",
     "details": "ProTrack is a productivity tracker which gamifies your daily life tasks and targets. With the complete control over your tasks generation and tracking, ProTrack is one complete solution to greatness. One app to achieve the one best version of yourself. One app to keep your consistency on track."
   },
@@ -17,6 +19,7 @@
     "id": 3,
     "title": "Fly Store",
     "image": "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w1920",
     "excerpt": "An e-commerce experience designed for modern streetwear.",
     "details": "Fly Store is a conceptual e-commerce platform that challenges traditional shopping layouts. By utilizing asymmetrical grids and high-contrast typography, we created a digital storefront that speaks directly to Gen-Z shoppers. Complete with payment gateway integration and inventory management."
   },
@@ -24,6 +27,7 @@
     "id": 4,
     "title": "Glitch The Matrix",
     "image": "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w1920",
     "excerpt": "An interactive, WebGL-powered promotional campaign site.",
     "details": "Built to promote an upcoming sci-fi indie game, 'Glitch The Matrix' pushes the boundaries of browser rendering. Using Three.js and custom shaders, users navigate through a 3D environment right from their browser, finding hidden clues about the game's lore."
   },
@@ -31,6 +35,7 @@
     "id": 5,
     "title": "CodeZ Platform",
     "image": "https://drive.google.com/thumbnail?id=1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5&sz=w1920",
     "excerpt": "An online learning portal for budding programmers.",
     "details": "CodeZ approached MAMBA to rethink how students learn to code online. We built an in-browser code editor paired with dynamic video lesson panels. The platform handles thousands of concurrent users running Python and JavaScript directly in the browser safely."
   }

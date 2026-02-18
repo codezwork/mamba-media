@@ -30,6 +30,12 @@ body {
   transition: background 0.3s ease;
 }
 
+/* Helper class for Homepage Transparent Header */
+.navbar.transparent {
+  background: transparent;
+  backdrop-filter: none;
+}
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -94,7 +100,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .nav-logo-img { height: 10px; }
+  .nav-logo-img { height: 15px; }
 }
 
 /* Mobile Menu */
@@ -156,7 +162,6 @@ body {
   overflow: hidden;
 }
 
-/* Updated to PIXELS (Square) instead of DOTS (Round) */
 .floating-pixel {
   position: absolute;
   width: 4px; /* Square size */
@@ -193,15 +198,12 @@ body {
   100% { stroke-dashoffset: -1000; }
 }
 
-/* --- NEW SCROLLYTELLING HERO --- */
-
-/* 1. The Track: This creates the scroll length */
+/* --- SCROLLYTELLING HERO --- */
 .hero-spacer {
-  height: 400vh; /* 4x viewport height = longer scroll time */
+  height: 400vh;
   position: relative;
 }
 
-/* 2. The Sticky Frame: Stays fixed while we scroll through the spacer */
 .hero-sticky-container {
   position: sticky;
   top: 0;
@@ -225,7 +227,6 @@ body {
   transition: opacity 1.5s ease;
 }
 
-/* 3. The Stages */
 .hero-stage {
   position: absolute;
   top: 0;
@@ -233,7 +234,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 2;
-  pointer-events: none; /* Let clicks pass to buttons */
+  pointer-events: none;
   opacity: 0;
   transition: opacity 0.8s ease, transform 0.8s ease;
   transform: translateY(20px);
@@ -245,7 +246,6 @@ body {
   pointer-events: auto;
 }
 
-/* Stage 1 & 3: Centered Content */
 .hero-content.centered {
   position: absolute;
   top: 50%;
@@ -265,7 +265,6 @@ body {
   text-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
-/* Stage 2: Corner Content */
 .corner-text {
   position: absolute;
   font-size: 1.2rem;
@@ -284,7 +283,6 @@ body {
 .bottom-left { bottom: 15%; left: 10%; text-align: left; }
 .bottom-right { bottom: 15%; right: 10%; text-align: right; }
 
-/* Global Styling */
 .highlight {
   color: #ff4444;
   font-weight: 700;
@@ -311,7 +309,6 @@ body {
   color: #121212;
 }
 
-/* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 40px;
@@ -361,37 +358,12 @@ body {
   100% { top: 20px; opacity: 0; }
 }
 
-.side-controls {
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 3;
-}
-
-.control-dot {
-  width: 12px;
-  height: 12px;
-  border: 2px solid #444;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.control-dot.active {
-  background: #ff4444;
-  border-color: #ff4444;
-}
-
 /* Services Section */
 .services {
   padding: 120px 0;
   background: #0f0f0f;
   position: relative;
-  z-index: 10; /* Above hero */
+  z-index: 10;
 }
 
 .services h2 {
@@ -496,33 +468,37 @@ body {
   align-self: flex-start;
 }
 
-/* Footer */
+/* --- FOOTER REFACTORED (Side-by-Side) --- */
 .footer {
   background: #0a0a0a;
   padding: 80px 0 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* 1. Container: Always Row (Side by Side) */
 .footer-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  margin-bottom: 60px;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 40px;
+  text-align: left;
 }
 
+/* 2. Brand Section: Left Side */
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  align-items: flex-start; /* Align contents to start */
+  gap: 20px;
+  flex: 2; /* Takes ample space */
 }
 
 .footer-logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: bold;
-  font-size: 18px;
-  letter-spacing: 2px;
 }
 
 .contact-info p {
@@ -531,9 +507,20 @@ body {
   font-size: 14px;
 }
 
+.contact-info a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ff4444;
+}
+
 .social-links {
   display: flex;
   gap: 15px;
+  justify-content: flex-start; /* Align left */
 }
 
 .social-link {
@@ -554,14 +541,22 @@ body {
   color: #ff4444;
 }
 
+/* 3. Links Section: Right Side */
 .footer-links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end; /* Align to right */
 }
 
-.footer-column ul { list-style: none; }
-.footer-column li { margin-bottom: 15px; }
+/* 4. The UL is Stacked (Column) */
+.footer-column ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* Vertically stacked links */
+  gap: 20px;
+  padding: 0;
+  text-align: right;
+}
 
 .footer-column a {
   color: #aaa;
@@ -594,26 +589,33 @@ body {
 .footer-dots .dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 0; /* Square */
   background: #333;
+  transition: background 0.3s ease;
 }
 
-/* Dynamic Portfolio Row Layout */
+.footer-dots:hover .dot {
+  background: #ff4444;
+}
+
+/* Portfolio Grid */
 .portfolio-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin-bottom: 80px;
 }
 
 .portfolio-row {
   display: flex;
+  flex-direction: column;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s, border-color 0.3s;
+  height: 100%;
 }
 
 .portfolio-row:hover {
@@ -622,8 +624,9 @@ body {
 }
 
 .portfolio-row img {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
@@ -636,7 +639,7 @@ body {
   padding: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  flex-grow: 1;
 }
 
 .portfolio-row-content h3 {
@@ -696,10 +699,12 @@ body {
 
 .modal-body img {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: contain;
   border-radius: 8px;
   margin-bottom: 40px;
+  background: #000;
 }
 
 .modal-body h2 {
@@ -719,10 +724,11 @@ body {
 @media (max-width: 768px) {
   .nav-menu { display: none; }
   .hero-content h1 { font-size: 2.5rem; }
-  .services-grid, .testimonials-grid, .contact-grid, .footer-content { grid-template-columns: 1fr; }
-  .portfolio-row { flex-direction: column; }
-  .portfolio-row img { width: 100%; }
-  .modal-body img { height: 200px; }
+  .services-grid, .testimonials-grid, .contact-grid { grid-template-columns: 1fr; }
+  
+  .portfolio-list { grid-template-columns: 1fr; }
+  
+  .modal-body img { height: auto; }
   
   /* Mobile Stage 2 Adjustment */
   .corner-text { font-size: 1rem; }
@@ -730,4 +736,21 @@ body {
   .top-right { top: 15%; right: 5%; }
   .bottom-left { bottom: 20%; left: 5%; }
   .bottom-right { bottom: 20%; right: 5%; }
+  
+  /* Footer Mobile Logic: Keep Row, Adjust Spacing */
+  .footer-content {
+    gap: 15px; /* Tighter gap */
+  }
+  
+  .footer-brand {
+    flex: 2; /* Keep brand taking more space */
+  }
+  
+  .social-links {
+    flex-wrap: wrap; /* Ensure icons wrap if screen is very tiny */
+  }
+  
+  .footer-links {
+    flex: 1; 
+  }
 }

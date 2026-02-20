@@ -227,8 +227,27 @@ body {
   transition: opacity 1.5s ease;
 }
 
-/* Cinematic Focus Reveal Base State */
 .hero-stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(20px);
+}
+/*
+.hero-stage.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+*/
+
+.stage-1{
   position: absolute;
   top: 0;
   left: 0;
@@ -239,35 +258,18 @@ body {
   opacity: 0;
   filter: blur(15px);
   transform: scale(0.9) translateY(20px);
+  will-change: transform, filter, opacity;
   transition: opacity 2.2s cubic-bezier(0.25, 1, 0.5, 1),
               transform 2.2s cubic-bezier(0.25, 1, 0.5, 1),
               filter 2.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Cinematic Focus Reveal Active State */
 .hero-stage.active {
   opacity: 1;
   filter: blur(0px);
   transform: scale(1) translateY(0);
   pointer-events: auto;
 }
-
-/* New Stage 2 Stacked Layout */
-.stacked-content {
-  display: flex;
-  flex-direction: column;
-  gap: 40px; /* Adjust this to change vertical separation */
-}
-
-.stacked-content h2 {
-  font-size: 3rem;
-  font-weight: 300;
-  letter-spacing: 4px;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.8);
-}
-
-/* You can safely delete these old classes from your CSS: */
-/* .corner-text, .top-left, .top-right, .bottom-left, .bottom-right */
 
 .hero-content.centered {
   position: absolute;

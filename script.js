@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    renderer.setPixelRatio(window.devicePixelRatio);
     canvasContainer.appendChild(renderer.domElement);
 
     setTimeout(() => { canvasContainer.style.opacity = '1'; }, 100);
@@ -136,37 +136,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function animate() {
         requestAnimationFrame(animate);
-        
-        // Only render if we are actually looking at the hero section
-        if (window.scrollY < window.innerHeight * 4) {
-            globe.rotation.y += 0.002;
-            particlesMesh.rotation.y = -0.0005;
-            ring1.rotation.z += 0.005;
-            ring2.rotation.z -= 0.003;
-            ring3.rotation.z += 0.008;
+        globe.rotation.y += 0.002;
+        particlesMesh.rotation.y = -0.0005;
+        ring1.rotation.z += 0.005;
+        ring2.rotation.z -= 0.003;
+        ring3.rotation.z += 0.008;
 
-            const targetZ = initialZ - (scrollProgress * (initialZ - finalZ));
-            camera.position.z += (targetZ - camera.position.z) * 0.1;
-            globe.rotation.x = scrollProgress * 0.5;
+        const targetZ = initialZ - (scrollProgress * (initialZ - finalZ));
+        camera.position.z += (targetZ - camera.position.z) * 0.1;
+        globe.rotation.x = scrollProgress * 0.5;
 
-            renderer.render(scene, camera);
-        }
+        renderer.render(scene, camera);
     }
     animate();
 
-    let spacerHeight = heroSpacer.offsetHeight;
-    let viewportHeight = window.innerHeight;
-    let scrollableDistance = spacerHeight - viewportHeight;
-
-    // Update them only when the window resizes
-    window.addEventListener('resize', () => {
-        spacerHeight = heroSpacer.offsetHeight;
-        viewportHeight = window.innerHeight;
-        scrollableDistance = spacerHeight - viewportHeight;
-    });
-
     window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;
+        const spacerHeight = heroSpacer.offsetHeight;
+        const viewportHeight = window.innerHeight;
+        const scrollableDistance = spacerHeight - viewportHeight;
         
         let progress = scrollTop / scrollableDistance;
         if (progress < 0) progress = 0;

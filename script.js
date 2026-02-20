@@ -129,6 +129,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const stages = document.querySelectorAll('.hero-stage');
     const scrollIndicator = document.querySelector('.scroll-indicator');
 
+    // Add this to trigger the Cinematic Focus Reveal on page load
+    setTimeout(() => {
+        window.dispatchEvent(new Event('scroll'));
+    }, 1500);
+
     function animate() {
         requestAnimationFrame(animate);
         globe.rotation.y += 0.002;

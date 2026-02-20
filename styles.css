@@ -779,3 +779,13 @@ body {
     flex: 1; 
   }
 }
+
+/* Enable smooth scrolling across the entire site */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent the fixed navbar from covering the form when using the anchor link */
+#inquiry-form {
+  scroll-margin-top: 120px; 
+}

@@ -789,3 +789,132 @@ html {
 #inquiry-form {
   scroll-margin-top: 120px; 
 }
+
+/* --- CUSTOM DROPDOWN STYLES --- */
+.custom-select-wrapper {
+  position: relative;
+  user-select: none;
+  width: 100%;
+}
+
+.custom-select-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff; /* Default text color */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 14px; /* Matches your inputs */
+}
+
+/* Match the placeholder color for the initial "SUBJECT" text */
+.custom-select-trigger .trigger-text {
+    color: #757575; /* Similar to default placeholder grey */
+}
+
+/* When a selection is made, turn text white */
+.custom-select-wrapper.selected .trigger-text {
+    color: #ffffff;
+}
+
+.custom-select-trigger:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.custom-select-wrapper.open .custom-select-trigger {
+  border-color: #ff4444;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.arrow {
+  position: relative;
+  height: 8px;
+  width: 8px;
+}
+
+.arrow::before, .arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 2px;
+  height: 100%;
+  background-color: #ff4444;
+  transition: all 0.3s;
+}
+
+.arrow::before {
+  left: -2px;
+  transform: rotate(-45deg);
+}
+
+.arrow::after {
+  left: 2px;
+  transform: rotate(45deg);
+}
+
+/* Rotate arrow when open */
+.custom-select-wrapper.open .arrow::before {
+  left: -2px;
+  transform: rotate(45deg);
+}
+.custom-select-wrapper.open .arrow::after {
+  left: 2px;
+  transform: rotate(-45deg);
+}
+
+.custom-options {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.5, 0, 0, 1.25);
+}
+
+.custom-select-wrapper.open .custom-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.custom-option {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #ccc;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.custom-option:last-of-type {
+  border-bottom: none;
+}
+
+.custom-option:hover {
+  background-color: #ff4444;
+  color: #fff;
+  padding-left: 25px; /* Slight movement effect */
+}
+
+.custom-option.selected {
+  color: #ff4444;
+  font-weight: bold;
+}
+.custom-option.selected:hover {
+    color: #fff;
+}

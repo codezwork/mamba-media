@@ -1,30 +1,54 @@
 [
   {
     "id": 1,
-    "title": "TATA Mine Project",
+    "title": "TATA Mine Navigation",
     "image": "https://drive.google.com/thumbnail?id=12r9wpK92mXKIZiP5IOykCjkomeIh1xNe&sz=w400",
     "fullImage": "https://drive.google.com/thumbnail?id=12r9wpK92mXKIZiP5IOykCjkomeIh1xNe&sz=w1920",
-    "excerpt": "A comprehensive digital tracking solution tailored for heavy mining operations.",
-    "details": "The TATA Mine Project required an aggressive timeline to deploy a fully responsive platform for on-site managers. Our team mapped out wireframes, designed custom UI elements, and integrated real-time tracking APIs. The result improved site efficiency by 24% in the first quarter."
+    "excerpt": "A geospatial navigation tool tailored for complex mining site visitors.",
+    "details": "Designed to solve navigation challenges for senior visitors at TATA Steel mines. Unlike standard trackers, this project focused on mapping. I implemented the Leaflet Omnivore library to parse raw KML map files, creating a Google Maps-style interface. Users can click key locations in a popup list to automatically scroll and focus on specific mine zones, significantly improving on-site orientation."
   },
   {
     "id": 2,
-    "title": "ProTrack",
-    "image": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w1920",
-    "excerpt": "A complete solution to your Productivity tracking needs.",
-    "details": "ProTrack is a productivity tracker which gamifies your daily life tasks and targets. With the complete control over your tasks generation and tracking, ProTrack is one complete solution to greatness. One app to achieve the one best version of yourself. One app to keep your consistency on track."
+    "title": "Reading Room Manager",
+    "image": "https://drive.google.com/thumbnail?id=1rwCeOnNCmaqLwYEqqPNFFPtUmD8hGfGg&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5&sz=w1920",
+    "excerpt": "A cost-saving SaaS CRM replacing SMS costs with Firebase real-time sync.",
+    "details": "Built to eliminate high SMS costs for a local business. This responsive web app (Vanilla JS + Tailwind) uses Firebase for real-time database management. Key features include a 'Soft UI' dashboard for occupancy tracking, automated WhatsApp integration for fee reminders, and a member directory with deep-links to direct chat. The system handles subscription expiry logic automatically."
   },
   {
     "id": 3,
-    "title": "Fly Store",
-    "image": "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w1920",
-    "excerpt": "An e-commerce experience designed for modern streetwear.",
-    "details": "Fly Store is a conceptual e-commerce platform that challenges traditional shopping layouts. By utilizing asymmetrical grids and high-contrast typography, we created a digital storefront that speaks directly to Gen-Z shoppers. Complete with payment gateway integration and inventory management."
+    "title": "UniTime PWA",
+    "image": "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w1920",
+    "excerpt": "A university utility PWA handling complex scheduling and mess menus.",
+    "details": "A Progressive Web App engineered to parse intricate university slot systems (A/B/C slots) and split afternoon sessions. Wrapped as a Trusted Web Activity (TWA) for Android, it features offline capabilities, a 'Hero Card' dashboard for next-class alerts, and a dynamic mess menu viewer with dietary filtering. Authentication is smoothed with a custom splash screen to eliminate UI flicker."
   },
   {
     "id": 4,
+    "title": "Carmel School Portal",
+    "image": "https://drive.google.com/thumbnail?id=1tUqigUrEp4PrnRKeLNU5L9G5Ji1fQ0Vb&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w1920",
+    "excerpt": "A digital presence solution with a zero-cost cloud storage backend.",
+    "details": "Developed to modernize a local school's digital footprint. The standout technical achievement is the 'backend cost-free' gallery system. Instead of paid cloud storage, I engineered an admin workflow that utilizes the Google Drive API. School staff simply upload photos to a Drive folder, and the site dynamically fetches preview links to populate the gallery instantly."
+  },
+  {
+    "id": 5,
+    "title": "Fly Store: Valentine's",
+    "image": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w1920",
+    "excerpt": "Shopify POD store powered by AI-generated UGC video marketing.",
+    "details": "A Print-on-Demand apparel store launched for the Valentine's season. While built on Shopify, the technical highlight was the marketing workflow. I utilized Gemini’s Nano Banana model and Veo to generate realistic User Generated Content (UGC) video ads, establishing a tight workflow for rapid asset creation without physical photoshoots."
+  },
+  {
+    "id": 6,
+    "title": "ProTrack",
+    "image": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w1920",
+    "excerpt": "A productivity PWA that gamifies task management and consistency.",
+    "details": "ProTrack is a habit-building platform designed to keep users consistent. As a PWA, it offers native-like performance for tracking daily targets. Features include habit streak visualization, task generation controls, and focus timers, all wrapped in a gamified interface to encourage user retention and daily activity."
+  }
+  {
+    "id": 7,
     "title": "Glitch The Matrix",
     "image": "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w400",
     "fullImage": "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w1920",
@@ -32,7 +56,7 @@
     "details": "Built to promote an upcoming sci-fi indie game, 'Glitch The Matrix' pushes the boundaries of browser rendering. Using Three.js and custom shaders, users navigate through a 3D environment right from their browser, finding hidden clues about the game's lore."
   },
   {
-    "id": 5,
+    "id": 8,
     "title": "CodeZ Platform",
     "image": "https://drive.google.com/thumbnail?id=1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5&sz=w400",
     "fullImage": "https://drive.google.com/thumbnail?id=1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5&sz=w1920",

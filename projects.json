@@ -18,8 +18,8 @@
   {
     "id": 3,
     "title": "UniTime PWA",
-    "image": "https://drive.google.com/thumbnail?id=16sqjoOqCo6KzpzWwk04RnALjjIghZwN9&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=16sqjoOqCo6KzpzWwk04RnALjjIghZwN9&sz=w1920",
+    "image": "https://drive.google.com/thumbnail?id=1siI9zy2yYXTOHD5JTb9v3Xe83QGF5GaL&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=1siI9zy2yYXTOHD5JTb9v3Xe83QGF5GaL&sz=w1920",
     "excerpt": "A university utility PWA handling complex scheduling and mess menus.",
     "details": "A Progressive Web App engineered to parse intricate university slot systems (A/B/C slots) and split afternoon sessions. Wrapped as a Trusted Web Activity (TWA) for Android, it features offline capabilities, a 'Hero Card' dashboard for next-class alerts, and a dynamic mess menu viewer with dietary filtering. Authentication is smoothed with a custom splash screen to eliminate UI flicker."
   },

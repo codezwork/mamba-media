@@ -11,15 +11,15 @@
     "id": 2,
     "title": "Reading Room Manager",
     "image": "https://drive.google.com/thumbnail?id=1rwCeOnNCmaqLwYEqqPNFFPtUmD8hGfGg&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5&sz=w1920",
+    "fullImage": "https://drive.google.com/thumbnail?id=1rwCeOnNCmaqLwYEqqPNFFPtUmD8hGfGg&sz=w1920",
     "excerpt": "A cost-saving SaaS CRM replacing SMS costs with Firebase real-time sync.",
     "details": "Built to eliminate high SMS costs for a local business. This responsive web app (Vanilla JS + Tailwind) uses Firebase for real-time database management. Key features include a 'Soft UI' dashboard for occupancy tracking, automated WhatsApp integration for fee reminders, and a member directory with deep-links to direct chat. The system handles subscription expiry logic automatically."
   },
   {
     "id": 3,
     "title": "UniTime PWA",
-    "image": "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w1920",
+    "image": "https://drive.google.com/thumbnail?id=16sqjoOqCo6KzpzWwk04RnALjjIghZwN9&sz=w400",
+    "fullImage": "https://drive.google.com/thumbnail?id=16sqjoOqCo6KzpzWwk04RnALjjIghZwN9&sz=w1920",
     "excerpt": "A university utility PWA handling complex scheduling and mess menus.",
     "details": "A Progressive Web App engineered to parse intricate university slot systems (A/B/C slots) and split afternoon sessions. Wrapped as a Trusted Web Activity (TWA) for Android, it features offline capabilities, a 'Hero Card' dashboard for next-class alerts, and a dynamic mess menu viewer with dietary filtering. Authentication is smoothed with a custom splash screen to eliminate UI flicker."
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "title": "Carmel School Portal",
     "image": "https://drive.google.com/thumbnail?id=1tUqigUrEp4PrnRKeLNU5L9G5Ji1fQ0Vb&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w1920",
+    "fullImage": "https://drive.google.com/thumbnail?id=1tUqigUrEp4PrnRKeLNU5L9G5Ji1fQ0Vb&sz=w1920",
     "excerpt": "A digital presence solution with a zero-cost cloud storage backend.",
     "details": "Developed to modernize a local school's digital footprint. The standout technical achievement is the 'backend cost-free' gallery system. Instead of paid cloud storage, I engineered an admin workflow that utilizes the Google Drive API. School staff simply upload photos to a Drive folder, and the site dynamically fetches preview links to populate the gallery instantly."
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "title": "Fly Store: Valentine's",
     "image": "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w1920",
+    "fullImage": "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w1920",
     "excerpt": "Shopify POD store powered by AI-generated UGC video marketing.",
     "details": "A Print-on-Demand apparel store launched for the Valentine's season. While built on Shopify, the technical highlight was the marketing workflow. I utilized Gemini’s Nano Banana model and Veo to generate realistic User Generated Content (UGC) video ads, establishing a tight workflow for rapid asset creation without physical photoshoots."
   },

@@ -2,65 +2,91 @@
   {
     "id": 1,
     "title": "TATA Mine Navigation",
-    "image": "https://drive.google.com/thumbnail?id=12r9wpK92mXKIZiP5IOykCjkomeIh1xNe&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=12r9wpK92mXKIZiP5IOykCjkomeIh1xNe&sz=w1920",
+    "category": "saas",
+    "tags": ["Geospatial", "Leaflet.js", "KML Parsing"],
+    "imageId": "12r9wpK92mXKIZiP5IOykCjkomeIh1xNe",
+    "fullImageId": "12r9wpK92mXKIZiP5IOykCjkomeIh1xNe",
     "excerpt": "A geospatial navigation tool tailored for complex mining site visitors.",
-    "details": "Designed to solve navigation challenges for senior visitors at TATA Steel mines. Unlike standard trackers, this project focused on mapping. I implemented the Leaflet Omnivore library to parse raw KML map files, creating a Google Maps-style interface. Users can click key locations in a popup list to automatically scroll and focus on specific mine zones, significantly improving on-site orientation."
+    "details": "Designed to solve navigation challenges for senior visitors at TATA Steel mines. Unlike standard trackers, this project focused on mapping. I implemented the Leaflet Omnivore library to parse raw KML map files, creating a Google Maps-style interface.",
+    "testimonial": {
+      "author": "Operations Lead, TATA Steel",
+      "imageId": "1RaypnY6XjJvHMWHVdOiwYIGFoILGy0l2",
+      "text": "This completely transformed how our visitors navigate the complex zones. The interface is incredibly intuitive."
+    }
   },
   {
     "id": 2,
     "title": "Reading Room Manager",
-    "image": "https://drive.google.com/thumbnail?id=1rwCeOnNCmaqLwYEqqPNFFPtUmD8hGfGg&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1rwCeOnNCmaqLwYEqqPNFFPtUmD8hGfGg&sz=w1920",
+    "category": "saas",
+    "tags": ["Firebase", "Real-time DB", "SaaS"],
+    "imageId": "1rwCeOnNCmaqLwYEqqPNFFPtUmD8hGfGg",
+    "fullImageId": "1rwCeOnNCmaqLwYEqqPNFFPtUmD8hGfGg",
     "excerpt": "A cost-saving SaaS CRM replacing SMS costs with Firebase real-time sync.",
-    "details": "Built to eliminate high SMS costs for a local business. This responsive web app (Vanilla JS + Tailwind) uses Firebase for real-time database management. Key features include a 'Soft UI' dashboard for occupancy tracking, automated WhatsApp integration for fee reminders, and a member directory with deep-links to direct chat. The system handles subscription expiry logic automatically."
+    "details": "Built to eliminate high SMS costs for a local business. This responsive web app uses Firebase for real-time database management. Key features include an occupancy tracking dashboard and automated WhatsApp integration.",
+    "testimonial": {
+      "author": "Local Business Owner",
+      "imageId": "1RaypnY6XjJvHMWHVdOiwYIGFoILGy0l2",
+      "text": "MAMBA Media slashed our operational costs by 80% with this Firebase integration. Pure wizardry."
+    }
   },
   {
     "id": 3,
     "title": "UniTime PWA",
-    "image": "https://drive.google.com/thumbnail?id=1siI9zy2yYXTOHD5JTb9v3Xe83QGF5GaL&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1siI9zy2yYXTOHD5JTb9v3Xe83QGF5GaL&sz=w1920",
+    "category": "pwa",
+    "tags": ["PWA", "Offline-First", "TWA"],
+    "imageId": "1siI9zy2yYXTOHD5JTb9v3Xe83QGF5GaL",
+    "fullImageId": "1siI9zy2yYXTOHD5JTb9v3Xe83QGF5GaL",
     "excerpt": "A university utility PWA handling complex scheduling and mess menus.",
-    "details": "A Progressive Web App engineered to parse intricate university slot systems (A/B/C slots) and split afternoon sessions. Wrapped as a Trusted Web Activity (TWA) for Android, it features offline capabilities, a 'Hero Card' dashboard for next-class alerts, and a dynamic mess menu viewer with dietary filtering. Authentication is smoothed with a custom splash screen to eliminate UI flicker."
+    "details": "A Progressive Web App engineered to parse intricate university slot systems. Wrapped as a Trusted Web Activity (TWA) for Android, it features offline capabilities and a 'Hero Card' dashboard."
   },
   {
     "id": 4,
     "title": "Carmel School Portal",
-    "image": "https://drive.google.com/thumbnail?id=1tUqigUrEp4PrnRKeLNU5L9G5Ji1fQ0Vb&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1tUqigUrEp4PrnRKeLNU5L9G5Ji1fQ0Vb&sz=w1920",
+    "category": "ecommerce",
+    "tags": ["Cloud Storage API", "Serverless"],
+    "imageId": "1tUqigUrEp4PrnRKeLNU5L9G5Ji1fQ0Vb",
+    "fullImageId": "1tUqigUrEp4PrnRKeLNU5L9G5Ji1fQ0Vb",
     "excerpt": "A digital presence solution with a zero-cost cloud storage backend.",
-    "details": "Developed to modernize a local school's digital footprint. The standout technical achievement is the 'backend cost-free' gallery system. Instead of paid cloud storage, I engineered an admin workflow that utilizes the Google Drive API. School staff simply upload photos to a Drive folder, and the site dynamically fetches preview links to populate the gallery instantly."
+    "details": "Developed to modernize a local school's digital footprint. The standout technical achievement is the 'backend cost-free' gallery system utilizing the Google Drive API."
   },
   {
     "id": 5,
     "title": "Fly Store: Valentine's",
-    "image": "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1sePEYYj2XA4AJt-C5OxBj31RJuBARY56&sz=w1920",
+    "category": "ecommerce",
+    "tags": ["Shopify", "Liquid", "AI UGC"],
+    "imageId": "1sePEYYj2XA4AJt-C5OxBj31RJuBARY56",
+    "fullImageId": "1sePEYYj2XA4AJt-C5OxBj31RJuBARY56",
     "excerpt": "Shopify POD store powered by AI-generated UGC video marketing.",
-    "details": "A Print-on-Demand apparel store launched for the Valentine's season. While built on Shopify, the technical highlight was the marketing workflow. I utilized Gemini’s Nano Banana model and Veo to generate realistic User Generated Content (UGC) video ads, establishing a tight workflow for rapid asset creation without physical photoshoots."
+    "details": "A Print-on-Demand apparel store. I utilized Gemini to generate realistic User Generated Content (UGC) video ads, establishing a tight workflow for rapid asset creation."
   },
   {
     "id": 6,
     "title": "ProTrack",
-    "image": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m&sz=w1920",
+    "category": "pwa",
+    "tags": ["PWA", "Gamification", "React"],
+    "imageId": "1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m",
+    "fullImageId": "1HjdYeX_l0rUV3jUAuwS_Wmo7YcIKfh8m",
     "excerpt": "A productivity PWA that gamifies task management and consistency.",
-    "details": "ProTrack is a habit-building platform designed to keep users consistent. As a PWA, it offers native-like performance for tracking daily targets. Features include habit streak visualization, task generation controls, and focus timers, all wrapped in a gamified interface to encourage user retention and daily activity."
+    "details": "ProTrack is a habit-building platform designed to keep users consistent. As a PWA, it offers native-like performance for tracking daily targets."
   },
   {
     "id": 7,
     "title": "Glitch The Matrix",
-    "image": "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6&sz=w1920",
+    "category": "web3d",
+    "tags": ["WebGL", "Three.js", "Shaders"],
+    "imageId": "1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6",
+    "fullImageId": "1Fznhj6qKo9SbPsGJ-vJY3yDaPn3Bo9c6",
     "excerpt": "An interactive, WebGL-powered promotional campaign site.",
-    "details": "Built to promote an upcoming sci-fi indie game, 'Glitch The Matrix' pushes the boundaries of browser rendering. Using Three.js and custom shaders, users navigate through a 3D environment right from their browser, finding hidden clues about the game's lore."
+    "details": "Built to promote an upcoming sci-fi indie game, pushing the boundaries of browser rendering using Three.js and custom shaders."
   },
   {
     "id": 8,
     "title": "CodeZ Platform",
-    "image": "https://drive.google.com/thumbnail?id=1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5&sz=w400",
-    "fullImage": "https://drive.google.com/thumbnail?id=1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5&sz=w1920",
+    "category": "saas",
+    "tags": ["WebSockets", "Node.js", "EdTech"],
+    "imageId": "1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5",
+    "fullImageId": "1bzc_5qX5D76jRod7XNTGYMmEsY4nuvB5",
     "excerpt": "An online learning portal for budding programmers.",
-    "details": "CodeZ approached MAMBA to rethink how students learn to code online. We built an in-browser code editor paired with dynamic video lesson panels. The platform handles thousands of concurrent users running Python and JavaScript directly in the browser safely."
+    "details": "We built an in-browser code editor paired with dynamic video lesson panels capable of handling thousands of concurrent users."
   }
 ]

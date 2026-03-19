@@ -3,9 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAMBA MEDIA - Contacts</title>
+  
+  <title>Contact Us | MAMBA MEDIA - Remote Web Development</title>
+  <meta name="description" content="Get in touch with MAMBA MEDIA. Whether you need a high-performance website, a progressive web app, or a digital strategy, our remote team is ready to build your next project.">
+  
+  <link rel="preconnect" href="https://drive.google.com">
   <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1RaypnY6XjJvHMWHVdOiwYIGFoILGy0l2&sz=w400">
   <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "OnlineBusiness"],
+    "name": "Mamba Media",
+    "url": "https://www.mambaclub.site",
+    "logo": "https://drive.google.com/thumbnail?id=1RaypnY6XjJvHMWHVdOiwYIGFoILGy0l2&sz=w400",
+    "description": "A remote web development company specializing in modern digital solutions, progressive web apps, and high-performance sites.",
+    "areaServed": "Worldwide", 
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-97670-74984",
+      "email": "the7s.pvt@gmail.com",
+      "contactType": "Customer Service",
+      "availableLanguage": ["English"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/mamba-media-hq",
+      "https://www.instagram.com/mambamediahq"
+    ],
+    "knowsAbout": ["Web Development", "Progressive Web Apps", "Firebase", "Vercel"]
+  }
+  </script>
   <style>
     /* New styles for the form success message */
     #form-message {
@@ -32,12 +60,11 @@
       <ul class="nav-menu">
         <li><a href="index.html">HOME</a></li>
         <li><a href="portfolio.html">PORTFOLIO</a></li>
+        <li><a href="team.html">TEAM</a></li>
         <li><a href="contact.html#inquiry-form">GET IN TOUCH</a></li>
       </ul>
       <div class="nav-dots" id="nav-toggle">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
       </div>
     </div>
   </nav>
@@ -46,7 +73,8 @@
     <ul>
       <li><a href="index.html">HOME</a></li>
       <li><a href="portfolio.html">PORTFOLIO</a></li>
-      <li><a href="contact.html#inquiry-forml">GET IN TOUCH</a></li>
+      <li><a href="team.html">TEAM</a></li>
+      <li><a href="contact.html#inquiry-form">GET IN TOUCH</a></li>
     </ul>
   </div>
 
@@ -56,45 +84,45 @@
       </svg>
   </div>
 
-  <section class="contact-section">
-    <div class="container">
-      <h1 class="page-title">GET IN <span class="highlight">TOUCH</span></h1>
-      
-      <div class="contact-grid">
-        <div class="contact-info-block">
-          <h3>LET'S BUILD SOMETHING</h3>
-          <p>Whether you have a specific project in mind or just want to explore the possibilities, our team is always ready to over-deliver your expectations.</p>
-          
-          <div class="info-items">
-            <div class="info-item">
-              <strong>LOCATION:</strong><br>
-              We are always on move<br>
-              We are everywhere!
+  <main>
+    <section class="contact-section">
+      <div class="container">
+        <h1 class="page-title">GET IN <span class="highlight">TOUCH</span></h1>
+        
+        <div class="contact-grid">
+          <div class="contact-info-block">
+            <h3>LET'S BUILD SOMETHING</h3>
+            <p>Whether you need a full-scale web app, a backend integration, or just want to explore possibilities, our engineering team is ready.</p>
+            
+            <div class="info-items">
+              <div class="info-item">
+                <strong>LOCATION:</strong><br>
+                Headquartered digitally.<br>
+                Operating globally.
+              </div>
+              <div class="info-item">
+                <strong>PHONE:</strong><br>
+                +91 97670 74984
+              </div>
+              <div class="info-item">
+                <strong>EMAIL:</strong><br>
+                the7s.pvt@gmail.com
+              </div>
             </div>
-            <div class="info-item">
-              <strong>PHONE:</strong><br>
-              +91 97670 74984
-            </div>
-            <div class="info-item">
-              <strong>EMAIL:</strong><br>
-              the7s.pvt@gmail.com
-            </div>
+
           </div>
-        </div>
 
-        <div class="form-wrapper" id="inquiry-form" style="width: 100%;">
-            
-            <h3 style="font-size: 1.2rem; margin-bottom: 25px; color: #ff4444; letter-spacing: 2px; text-transform: uppercase;">
-              Send us your inquiry
-            </h3>
+          <div class="form-wrapper" id="inquiry-form" style="width: 100%;">
+              <h3 style="font-size: 1.2rem; margin-bottom: 25px; color: #ff4444; letter-spacing: 2px; text-transform: uppercase;">
+                Send us your inquiry
+              </h3>
 
-            <script type="text/javascript">var submitted=false;</script>
-            
-            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
-                onload="if(submitted) {document.getElementById('contact-form').reset(); document.getElementById('form-message').style.display='block';}">
-            </iframe>
+              <script type="text/javascript">var submitted=false;</script>
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+                  onload="if(submitted) {document.getElementById('contact-form').reset(); document.getElementById('form-message').style.display='flex';}">
+              </iframe>
 
-            <form class="contact-form" id="contact-form"
+              <form class="contact-form" id="contact-form"
                 action="https://docs.google.com/forms/d/e/1FAIpQLSfWLSCc5lAoT4TKSL-vFwJXP_lyEewfcG6HM8qXUCbOkxd1_w/formResponse" 
                 method="POST" 
                 target="hidden_iframe" 
@@ -128,13 +156,45 @@
                 <button type="submit" class="cta-button">SEND MESSAGE</button>
             </form>
 
-            <div id="form-message" class="success-msg">
-                Message Sent! We'll get back to you shortly.
+              <div id="form-message" class="success-msg">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Message Sent! We'll get back to you shortly.
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-container">
+      <div class="container">
+        <h2 style="font-size: 2rem; text-align: center; margin-bottom: 50px; font-weight: 300; letter-spacing: 2px;">
+          FREQUENTLY ASKED <span class="highlight">QUESTIONS</span>
+        </h2>
+        
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">Who builds the software? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">
+              <p>Our core team consists of elite engineering talent with backgrounds from premier institutions, ensuring enterprise-grade architecture for every project we touch.</p>
             </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What is the typical engagement process? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">
+              <p>We start with a technical discovery phase to map your architecture, followed by agile development sprints, rigorous QA testing, and finally, deployment and handoff.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Do you offer post-launch maintenance? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">
+              <p>Yes. We offer retainer packages for ongoing server maintenance, SEO monitoring, and feature scaling for SaaS and progressive web apps.</p>
+            </div>
+          </div>
         </div>
-        </div>
-    </div>
-  </section>
+      </div>
+    </section>
+
+  </main>
 
   <footer class="footer">
     <div class="container">
@@ -148,17 +208,12 @@
             <p><a href="mailto:the7s.pvt@gmail.com">the7s.pvt@gmail.com</a></p>
           </div>
           <div class="social-links">
-            <a href="#" class="social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-            <a href="#" class="social-link">
+            <a href="https://www.linkedin.com/company/mamba-media-hq" class="social-link" target="_blank">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
-            <a href="#" class="social-link">
+            <a href="https://www.instagram.com/mambamediahq" class="social-link" target="_blank">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -172,17 +227,16 @@
             <ul>
               <li><a href="index.html">HOME</a></li>
               <li><a href="portfolio.html">PORTFOLIO</a></li>
+              <li><a href="team.html">ABOUT US</a></li>
               <li><a href="contact.html#inquiry-form">CONTACT US</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>A subsidiary firm of ©7Brothers.Co™</p>
+        <p>© 2026 MAMBA MEDIA. All Rights Reserved.</p>
         <div class="footer-dots">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         </div>
       </div>
     </div>
@@ -233,5 +287,5 @@
           });
       });
   </script>
-</body>
+  </body>
 </html>

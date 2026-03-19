@@ -417,10 +417,17 @@ body {
 
 .service-card {
   text-align: left;
-  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 40px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.service-card:hover { transform: translateY(-10px); }
+.service-card:hover { 
+  transform: translateY(-10px); 
+  border-color: #ff4444; 
+}
 .service-icon { margin-bottom: 30px; }
 .service-card h3 { font-size: 1.5rem; color: #fff; margin-bottom: 20px; }
 .service-card p { color: #aaa; font-size: 14px; }
@@ -917,4 +924,435 @@ html {
 }
 .custom-option.selected:hover {
     color: #fff;
+}
+
+/* --- TESTIMONIAL MODAL INJECTIONS --- */
+#modal-testimonial {
+  display: none; /* Hidden by default */
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid #ff4444;
+  border-radius: 4px;
+  gap: 20px;
+  align-items: center;
+}
+
+.testimony-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ff4444;
+  margin-bottom: 0; /* Override modal default img margin */
+}
+
+.testimony-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimony-text {
+  font-style: italic;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.testimony-author {
+  color: #aaa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  #modal-testimonial {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* --- TECH STACK MARQUEE --- */
+.tech-stack-section {
+  padding: 40px 0;
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+.tech-stack-section p {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.tech-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  opacity: 0.5;
+}
+.tech-logos span { font-weight: 600; font-size: 1.2rem; letter-spacing: 1px; color: #fff;}
+
+/* --- SERVICES OVERHAUL --- */
+.services-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* --- PORTFOLIO FILTERS & PILLS --- */
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: #ff4444;
+  border-color: #ff4444;
+}
+.tech-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.tech-pill {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  background: rgba(255, 68, 68, 0.1);
+  color: #ff4444;
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+/* --- FAQ SECTION --- */
+.faq-section { margin-top: 50px; }
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+}
+.faq-item h4 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.faq-item p { color: #aaa; font-size: 0.95rem; line-height: 1.6;}
+
+/* --- FORM SUCCESS OVERRIDE --- */
+.success-msg {
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+  color: #28a745;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* --- HERO MOBILE OVERLAP WORKAROUND --- */
+@media (max-width: 768px) {
+  .stage-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 30px;
+    padding: 20px;
+  }
+  .stage-2 .corner-text {
+    position: static; /* Removes the absolute corners */
+    width: 40%; /* Forces a 2x2 grid look */
+    text-align: center !important;
+    font-size: 0.9rem;
+  }
+  .stage-2 .corner-text .highlight {
+    font-size: 1rem;
+  }
+}
+
+/* --- FAQ ACCORDION STYLES --- */
+.faq-container {
+  padding: 80px 0 120px;
+  background: #0f0f0f;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+}
+.faq-question {
+  padding: 20px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+.faq-question:hover {
+  color: #ff4444;
+}
+.faq-icon {
+  font-size: 1.5rem;
+  color: #ff4444;
+  font-weight: 300;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+.faq-answer p {
+  padding-bottom: 20px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* ============================================ */
+/* NEW TILT ROW & IMAGE INTERACTION STYLES */
+/* ============================================ */
+
+/* Section Wrapper */
+.tilt-section {
+  padding: 150px 0;
+  background: linear-gradient(180deg, #121212 0%, #0a0a0a 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Row Setup */
+.tilt-row-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* 1. Text Column Styles */
+.tilt-text-col {
+  flex: 1;
+}
+.section-title-alt {
+  font-size: 2.8rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.section-subtitle-alt {
+  color: #aaa;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 550px;
+  margin-bottom: 30px;
+}
+
+/* 2. Image Column & Stage Setup */
+.tilt-image-col {
+  flex: 1;
+  width: 100%; /* Forces column to span full width on mobile */
+}
+.parallax-stage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  perspective: 2000px;
+}
+
+/* The element that actually tilts */
+.tilting-image-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px; 
+  aspect-ratio: 4/3; 
+  min-height: 300px; /* FALLBACK: Prevents collapsing to 0 height on mobile */
+  background: transparent; /* Fallback color before image loads */
+  border-radius: 12px;
+  overflow: hidden; 
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transform-style: preserve-3d;
+}
+
+/* The actual image */
+.base-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  position: absolute;
+  top: 0; left: 0;
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+  .tilt-row-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+  .section-title-alt { font-size: 2.2rem; }
+  .section-subtitle-alt { margin: 0 auto 30px; }
+}
+
+/* ============================================ */
+/* --- TEAM PAGE STYLES (Grid 2-Column Layout) --- */
+/* ============================================ */
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.team-row {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr; 
+  gap: 50px; 
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 30px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.team-row:hover {
+  transform: translateX(10px);
+  border-color: rgba(255, 68, 68, 0.3);
+}
+
+/* LEFT COLUMN: The Photo */
+.team-photo-row {
+  width: 100%;
+  height: 260px; /* <-- CHANGED: Locks the height so it never over-expands */
+  object-fit: cover; 
+  object-position: center 15%; /* <-- ADDED: Keeps the crop focused near the top (faces) instead of the dead center */
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.team-row:hover .team-photo-row {
+  transform: scale(1.02);
+}
+
+/* RIGHT COLUMN: The Data Stack */
+.team-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.team-content-header {
+  margin-bottom: 15px;
+}
+
+.team-content h3 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.team-role {
+  color: #ff4444;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.team-bio {
+  color: #aaa;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 100%;
+}
+
+.team-socials {
+  margin-top: auto; 
+  display: flex;
+  gap: 15px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .team-row {
+    /* Forces 2 columns: a fixed 120px for the photo, and the rest for the text */
+    grid-template-columns: 120px 1fr; 
+    gap: 20px; /* Tighter gap so text has more breathing room */
+    padding: 20px 15px; /* Less empty space inside the card */
+    text-align: left; /* Ensures text stays left-aligned like desktop */
+  }
+
+  .team-row:hover {
+    transform: translateY(-5px); /* A softer hover effect for touch screens */
+  }
+
+  .team-photo-row {
+    width: 100%;
+    height: 100%;
+    min-height: 160px; /* Prevents the image from shrinking too much vertically */
+    max-height: 200px;
+    margin: 0;
+  }
+
+  /* Shrink text slightly to fit the narrow space gracefully */
+  .team-content-header {
+    margin-bottom: 10px;
+  }
+
+  .team-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+  }
+
+  .team-role {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .team-bio {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  /* Keep icons aligned left and make them slightly smaller */
+  .team-socials {
+    justify-content: flex-start; 
+    margin-top: auto;
+    gap: 10px;
+  }
+  
+  .team-socials .social-link {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .team-socials .social-link svg {
+    width: 14px;
+    height: 14px;
+  }
 }

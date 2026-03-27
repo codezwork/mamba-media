@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.faq-item').forEach(item => {
         item.classList.remove('active');
         item.querySelector('.faq-answer').style.maxHeight = null;
-        item.querySelector('.faq-icon').textContent = '+';
+        // (Removed the hardcoded '+' text replacement)
       });
 
       // If the clicked one wasn't active, open it
@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentItem.classList.add('active');
         const answer = currentItem.querySelector('.faq-answer');
         answer.style.maxHeight = answer.scrollHeight + "px";
-        currentItem.querySelector('.faq-icon').textContent = '-';
+        // (Removed the hardcoded '-' text replacement)
       }
     });
   });
@@ -450,6 +450,37 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuItem[i].href === currentLocation) {
       menuItem[i].style.color = '#ff4444';
     }
+  }
+
+  // --- 7. Lenis Smooth Anchor Routing ---
+  
+  // A. Handle clicks on anchor links within the same page
+  document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const url = new URL(this.href, window.location.href);
+      
+      // Check if the link points to the page we are currently on
+      const isSamePage = url.pathname === window.location.pathname || 
+                         (url.pathname === '/' && window.location.pathname.endsWith('index.html'));
+
+      if (isSamePage && url.hash) {
+        e.preventDefault();
+        if (typeof lenis !== 'undefined') {
+          // Smooth scroll to the target, offset by 100px so the navbar doesn't cover it
+          lenis.scrollTo(url.hash, { offset: -100, duration: 1.5 }); 
+        }
+      }
+    });
+  });
+
+  // B. Handle landing on a page from another page (e.g., Home -> Contact#inquiry-form)
+  if (window.location.hash) {
+    // Wait a brief moment for the page to render, then smooth scroll down to the form
+    setTimeout(() => {
+      if (typeof lenis !== 'undefined') {
+        lenis.scrollTo(window.location.hash, { offset: -100, duration: 1.5 });
+      }
+    }, 300);
   }
 
 });

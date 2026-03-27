@@ -91,6 +91,7 @@ body {
 
 .nav-dots .dot:hover {
   background: #ff4444;
+  transform: scale(1.2); /* Adds a satisfying tiny "pop" when hovered */
 }
 
 .nav-logo-img {
@@ -332,6 +333,14 @@ body {
 .cta-button:hover {
   background: #ff4444;
   color: #121212;
+}
+
+.cta-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: transparent;
+  color: #ff4444;
 }
 
 .scroll-indicator {
@@ -623,11 +632,13 @@ body {
   height: 8px;
   border-radius: 0; /* Square */
   background: #333;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.footer-dots:hover .dot {
+/* CHANGED: Target the specific dot on hover, not the parent container */
+.footer-dots .dot:hover {
   background: #ff4444;
+  transform: scale(1.2); /* Adds a satisfying tiny "pop" when hovered */
 }
 
 /* Portfolio Grid */
@@ -751,6 +762,7 @@ body {
   font-size: 1.1rem;
   max-width: 900px;
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -1203,6 +1215,58 @@ html {
   position: absolute;
   top: 0; left: 0;
 }
+/* ============================================ */
+/* 3D TILT HOVER PROMPT UX                      */
+/* ============================================ */
+.hover-instruction {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateZ(40px);
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  color: #fff;
+  padding: 8px 18px 8px 12px; /* Adjusted padding to fit the hand */
+  border-radius: 0px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 20;
+  pointer-events: none; 
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  box-shadow: 0px 20px 20px rgba(0,0,0,0.5);
+  flex-direction: column;
+}
+
+/* The new sliding hand animation */
+.sliding-hand {
+  animation: slideHand 1.5s ease-in-out infinite;
+}
+
+@keyframes slideHand {
+  0%, 100% { 
+    transform: translateX(-25px) rotate(-5deg); 
+  }
+  50% { 
+    transform: translateX(25px) rotate(5deg); 
+  }
+}
+
+/* The Magic Trick: Fade the prompt out when the card is hovered */
+.tilting-image-card:hover .hover-instruction {
+  opacity: 0;
+  transform: translateX(-50%) translateZ(40px) translateY(15px);
+}
+
+/* The Magic Trick: Fade the prompt out when the card is hovered */
+.tilting-image-card:hover .hover-instruction {
+  opacity: 0;
+  transform: translateX(-50%) translateZ(40px) translateY(15px); /* Drops down slightly as it fades */
+}
 
 /* Responsive Overrides */
 @media (max-width: 992px) {
@@ -1354,5 +1418,137 @@ html {
   .team-socials .social-link svg {
     width: 14px;
     height: 14px;
+  }
+}
+
+/* ============================================ */
+/* 1. LENIS SMOOTH SCROLLING BASE               */
+/* ============================================ */
+html.lenis, html.lenis body {
+  height: auto;
+  width: 100vw;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ============================================ */
+/* 2. SLIDING PILL NAV BAR                      */
+/* ============================================ */
+.nav-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 10px; /* Reduced gap because padding adds width to the links */
+  z-index: 1;
+}
+.nav-pill {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 40px; 
+  background-color: #ff4444; 
+  border-radius: 0px;
+  transform: translate(var(--pill-left, 0), -50%);
+  width: var(--pill-width, 0);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              width 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.3s ease;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.nav-menu li {
+  z-index: 1;
+}
+.nav-menu a {
+  position: relative;
+  z-index: 2;
+  padding: 10px 20px; /* Gives the pill its breathing room */
+  color: #ffffff;
+  transition: color 0.3s ease;
+  display: inline-block;
+  border-radius: 20px;
+}
+/* Invert text to dark when hovered or active */
+.nav-menu a:hover, 
+.nav-menu a.active-nav-link {
+  color: #121212 !important; 
+}
+
+/* ============================================ */
+/* 3. MODAL LOADING UX                          */
+/* ============================================ */
+.modal-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #0a0a0a;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#modal-image {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0; /* Hidden initially */
+  background: transparent;
+  transition: opacity 0.5s ease;
+  margin-bottom: 0; 
+}
+
+.mamba-loader {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 0PX !important;
+  position: absolute;
+  z-index: 1;
+  /* Adds a smooth pulsing spin */
+  animation: spinLogo 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; 
+}
+@keyframes spinLogo {
+  0% { transform: rotate(0deg) scale(0.8); opacity: 0.5; }
+  50% { transform: rotate(180deg) scale(1.1); opacity: 1; }
+  100% { transform: rotate(360deg) scale(0.8); opacity: 0.5; }
+}
+
+#modal-image.loaded {
+  opacity: 1; /* Fades in once fully loaded from Drive */
+}
+
+/* ============================================ */
+/* MOBILE NAVIGATION FIX                        */
+/* ============================================ */
+@media (max-width: 768px) {
+  /* Hides the desktop text links on mobile */
+  .nav-menu {
+    display: none !important; 
+  }
+  
+  /* Hides the sliding red pill background on mobile */
+  .nav-pill {
+    display: none !important;
+  }
+  
+  /* Ensures the 3 dots are always visible on mobile */
+  .nav-dots {
+    display: flex !important;
   }
 }

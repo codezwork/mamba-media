@@ -9,6 +9,7 @@
   
   <link rel="preconnect" href="https://drive.google.com">
   <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1RaypnY6XjJvHMWHVdOiwYIGFoILGy0l2&sz=w400">
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json">
@@ -119,14 +120,23 @@
 
               <script type="text/javascript">var submitted=false;</script>
               <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
-                  onload="if(submitted) {document.getElementById('contact-form').reset(); document.getElementById('form-message').style.display='flex';}">
+                  onload="if(submitted) {
+                      document.getElementById('contact-form').reset(); 
+                      document.getElementById('form-message').style.display='flex';
+                      let btn = document.getElementById('submit-btn');
+                      btn.disabled = false;
+                      btn.textContent = 'SEND MESSAGE';
+                  }">
               </iframe>
 
               <form class="contact-form" id="contact-form"
                 action="https://docs.google.com/forms/d/e/1FAIpQLSfWLSCc5lAoT4TKSL-vFwJXP_lyEewfcG6HM8qXUCbOkxd1_w/formResponse" 
                 method="POST" 
                 target="hidden_iframe" 
-                onsubmit="submitted=true;">
+                onsubmit="submitted=true; 
+                          let btn = document.getElementById('submit-btn');
+                          btn.disabled = true;
+                          btn.textContent = 'SENDING...';">
                 
                 <input type="text" name="entry.1588587397" placeholder="YOUR NAME" required>
                 
@@ -153,8 +163,12 @@
                 
                 <textarea name="entry.1057548089" placeholder="TELL US ABOUT YOUR PROJECT" rows="5" required></textarea>
                 
-                <button type="submit" class="cta-button">SEND MESSAGE</button>
+                <button type="submit" id="submit-btn" class="cta-button">SEND MESSAGE</button>
             </form>
+
+            <p style="font-size: 0.8rem; color: #666; margin-top: 10px; text-align: left;">
+              * We typically respond within 24 hours.
+            </p>
 
               <div id="form-message" class="success-msg">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -236,7 +250,9 @@
       <div class="footer-bottom">
         <p>© 2026 MAMBA MEDIA. All Rights Reserved.</p>
         <div class="footer-dots">
-          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
         </div>
       </div>
     </div>

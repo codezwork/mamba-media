@@ -1,3 +1,20 @@
+// --- Initialize Lenis Smooth Scrolling ---
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smooth: true,
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smoothTouch: false,
+  touchMultiplier: 2,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
 document.addEventListener('DOMContentLoaded', function() {
   
   // --- 1. Subpage Backgrounds (Square Pixels) ---
@@ -58,6 +75,60 @@ document.addEventListener('DOMContentLoaded', function() {
         navbar.style.background = window.scrollY > 50 ? 'rgba(18, 18, 18, 0.98)' : 'rgba(18, 18, 18, 0.95)';
       }
     });
+  }
+
+  // --- Nav Sliding Pill Logic ---
+  const navMenuElement = document.querySelector('.nav-menu');
+  if (navMenuElement) {
+    const pill = document.createElement('div');
+    pill.className = 'nav-pill';
+    navMenuElement.appendChild(pill);
+
+    const links = navMenuElement.querySelectorAll('a');
+    let activeLink = null;
+
+    // Detect current page
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+    links.forEach(link => {
+      const linkPath = link.getAttribute('href').split('#');
+      if (linkPath === currentPath) {
+        activeLink = link;
+        link.classList.add('active-nav-link');
+      }
+    });
+
+    // Calculates width and position of the hovered link
+    function movePill(el) {
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const menuRect = navMenuElement.getBoundingClientRect();
+      pill.style.opacity = '1';
+      pill.style.setProperty('--pill-width', `${rect.width}px`);
+      pill.style.setProperty('--pill-left', `${rect.left - menuRect.left}px`);
+    }
+
+    // Hover triggers
+    links.forEach(link => {
+      link.addEventListener('mouseenter', (e) => {
+        movePill(e.target);
+      });
+    });
+
+    // Mouse leave triggers fallback to active page
+    navMenuElement.addEventListener('mouseleave', () => {
+      if (activeLink) {
+        movePill(activeLink);
+      } else {
+        pill.style.opacity = '0';
+      }
+    });
+
+    // Initial load setup
+    if (activeLink) {
+      setTimeout(() => movePill(activeLink), 200); // Slight delay for fonts to render
+      window.addEventListener('resize', () => movePill(activeLink));
+    }
   }
 
   // --- 3. SCROLLYTELLING HERO LOGIC (THREE.JS) ---
@@ -281,8 +352,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalTestimonial = document.getElementById('modal-testimonial');
 
     function openModal(p) {
+      modalImg.classList.remove('loaded'); // Strip loaded class
       modalImg.src = ''; 
+      
       const fullImageUrl = `https://drive.google.com/thumbnail?id=${p.fullImageId || p.imageId}&sz=w1920`;
+      
+      // Wait for image to fully fetch from Drive before showing
+      modalImg.onload = () => {
+        modalImg.classList.add('loaded');
+      };
+
       modalImg.src = fullImageUrl;
       modalImg.alt = `${p.title} full view`;
       modalTitle.textContent = p.title;
@@ -305,15 +384,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
       modal.classList.add('show');
       document.body.style.overflow = 'hidden';
+
+      // NEW: Freeze Lenis smooth scroll while modal is open
+      if (typeof lenis !== 'undefined') lenis.stop();
     }
     
     function closeModal() {
       modal.classList.remove('show');
       document.body.style.overflow = 'auto';
+
+      // NEW: Resume Lenis smooth scroll when modal closes
+      if (typeof lenis !== 'undefined') lenis.start();
     }
 
     if(closeBtn) closeBtn.addEventListener('click', closeModal);
     window.addEventListener('click', e => { if(e.target === modal) closeModal(); });
+    window.addEventListener('keydown', e => { 
+      if(e.key === 'Escape' && modal.classList.contains('show')) closeModal(); 
+    });
   }
 
 // --- 5. FAQ Accordion Logic ---
@@ -352,6 +440,16 @@ document.addEventListener('DOMContentLoaded', function() {
           scale: 1.03,      // Slight zoom on hover
           perspective: 1500 // The 3D depth field
       });
+  }
+
+  // --- Active Nav Link Highlighting ---
+  const currentLocation = location.href;
+  const menuItem = document.querySelectorAll('.nav-menu a');
+  const menuLength = menuItem.length;
+  for (let i = 0; i < menuLength; i++) {
+    if (menuItem[i].href === currentLocation) {
+      menuItem[i].style.color = '#ff4444';
+    }
   }
 
 });

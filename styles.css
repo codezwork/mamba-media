@@ -509,6 +509,20 @@ body {
   align-self: flex-start;
 }
 
+#form-message {
+  display: none;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+.success-msg {
+  background: rgba(40, 167, 69, 0.2);
+  border: 1px solid #28a745;
+  color: #28a745;
+}
+
 /* --- FOOTER REFACTORED (Side-by-Side) --- */
 .footer {
   background: #0a0a0a;
@@ -1319,6 +1333,13 @@ html {
   .section-subtitle-alt { margin: 0 auto 30px; }
 }
 
+/* NEW: Hide the hover instruction on touch/mobile devices */
+@media (max-width: 768px) {
+  .hover-instruction {
+    display: none !important;
+  }
+}
+
 /* ============================================ */
 /* --- TEAM PAGE STYLES (Grid 2-Column Layout) --- */
 /* ============================================ */
@@ -1346,14 +1367,34 @@ html {
 }
 
 /* LEFT COLUMN: The Photo */
-.team-photo-row {
+/* LEFT COLUMN: The Photo Wrapper */
+.team-photo-wrapper {
+  position: relative;
   width: 100%;
-  height: 260px; /* <-- CHANGED: Locks the height so it never over-expands */
-  object-fit: cover; 
-  object-position: center 15%; /* <-- ADDED: Keeps the crop focused near the top (faces) instead of the dead center */
+  height: 260px;
+  background: #0a0a0a; /* Dark background while loader spins */
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* The actual image inside the wrapper */
+.team-photo-row {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center 15%; 
+  opacity: 0; /* Hidden initially */
+  transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+.team-photo-row.loaded {
+  opacity: 1; /* Fades in when loaded */
 }
 
 .team-row:hover .team-photo-row {
@@ -1413,10 +1454,11 @@ html {
     transform: translateY(-5px); /* A softer hover effect for touch screens */
   }
 
-  .team-photo-row {
+  /* Mobile: Transfer sizing logic to the wrapper */
+  .team-photo-wrapper {
     width: 100%;
     height: 100%;
-    min-height: 160px; /* Prevents the image from shrinking too much vertically */
+    min-height: 160px;
     max-height: 200px;
     margin: 0;
   }

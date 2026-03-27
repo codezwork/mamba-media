@@ -3,19 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Know The Team | MAMBA MEDIA</title>
+  <title>Our Team | Mamba Media - Web Development Experts</title>
   <meta name="description" content="Meet the engineering and design minds behind Mamba Media.">
   
   <link rel="preconnect" href="https://drive.google.com">
-  <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1RaypnY6XjJvHMWHVdOiwYIGFoILGy0l2&sz=w400">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "OnlineBusiness"],
+    "name": "Mamba Media",
+    "url": "https://www.mambaclub.site/",
+    "logo": "https://www.mambaclub.site/favicon.png",
+    "description": "A remote web development company specializing in modern digital solutions, progressive web apps, and high-performance sites.",
+    "areaServed": "Worldwide", 
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "the7s.pvt@gmail.com",
+      "contactType": "Customer Service",
+      "availableLanguage": ["English"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/mamba-media-hq",
+      "https://www.instagram.com/mambamediahq"
+    ],
+    "knowsAbout": ["Web Development", "Progressive Web Apps", "Firebase", "Vercel", "Three.js"],
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Dikshansh Raipure",
+        "jobTitle": "Business Head",
+        "sameAs": [
+          "https://www.linkedin.com/in/dikshansh-raipure/",
+          "https://www.instagram.com/dikshansh_raipure/"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Madhur Nahagamkar",
+        "jobTitle": "Lead Engineer",
+        "sameAs": [
+          "https://www.linkedin.com/in/madhur-nahagamkar-98709832b/",
+          "https://www.instagram.com/madhurrr_n/"
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="subpage">
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">
-        <img src="mamba-media-logo.svg" alt="Mamba Media" class="nav-logo-img">
+        <img src="mamba-media-logo.svg" alt="Mamba Media Logo" class="nav-logo-img">
       </a>
       <ul class="nav-menu">
         <li><a href="index.html">HOME</a></li>
@@ -48,7 +90,16 @@
         <div class="team-list">
         
           <div class="team-row">
-            <img src="https://drive.google.com/thumbnail?id=1RLkAeZphtbgiG__G63pPBu7JS7zHwI83&sz=w400" alt="Madhur" class="team-photo-row" loading="lazy">
+
+            <div class="team-photo-wrapper">
+              <img src="logo-icon.png" class="mamba-loader" alt="Mamba Media Loading...">
+              <img src="https://drive.google.com/thumbnail?id=1RLkAeZphtbgiG__G63pPBu7JS7zHwI83&sz=w400" 
+                   alt="Dikshansh - Business Head at Mamba Media Web Development" 
+                   class="team-photo-row" 
+                   loading="lazy" 
+                   onload="this.classList.add('loaded'); this.previousElementSibling.remove();">
+            </div>
+            
             <div class="team-content">
               <h3>Dikshansh</h3>
               <div class="team-role">3rd Year B.Tech IIT Madras</div>
@@ -83,7 +134,16 @@
           </div>
 
           <div class="team-row">
-            <img src="https://drive.google.com/thumbnail?id=1Dl8uBk1eu5q_2pPwA1Rk8TKfxCElJgCA&sz=w400" alt="Madhur" class="team-photo-row" loading="lazy">
+
+            <div class="team-photo-wrapper">
+              <img src="logo-icon.png" class="mamba-loader" alt="Mamba Media Loading...">
+              <img src="https://drive.google.com/thumbnail?id=1Dl8uBk1eu5q_2pPwA1Rk8TKfxCElJgCA&sz=w400" 
+                   alt="Madhur - Lead Engineer at Mamba Media Web Development" 
+                   class="team-photo-row" 
+                   loading="lazy" 
+                   onload="this.classList.add('loaded'); this.previousElementSibling.remove();">
+            </div>
+            
             <div class="team-content">
               <h3>Madhur</h3>
               <div class="team-role">2nd Year - B.Tech in Data Science & AI</div>
@@ -127,7 +187,7 @@
       <div class="footer-content">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="mamba-media-logo.svg" alt="Mamba Media" class="nav-logo-img">
+            <img src="mamba-media-logo.svg" alt="Mamba Media Logo" class="nav-logo-img">
           </div>
           <div class="contact-info">
             <p><a href="tel:+919767074984">+91 97670 74984</a></p>

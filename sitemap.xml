@@ -11,6 +11,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.mambaclub.site/team</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.mambaclub.site/contact</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>

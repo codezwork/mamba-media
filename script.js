@@ -91,8 +91,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
     links.forEach(link => {
-      const linkPath = link.getAttribute('href').split('#');
-      if (linkPath === currentPath) {
+      // 1. Get the first part of the href before any '#'
+      const linkPath = link.getAttribute('href').split('#'); 
+      
+      // 2. Clean up currentPath to ensure 'index.html' matches '/'
+      const normalizedPath = currentPath === '' ? 'index.html' : currentPath;
+
+      if (linkPath === normalizedPath) {
         activeLink = link;
         link.classList.add('active-nav-link');
       }
@@ -430,8 +435,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // --- 6. Manual Vanilla Tilt Initialization ---
+  // --- 6. Manual Vanilla Tilt Initialization ---
   const tiltElement = document.getElementById('tilt-card-element');
-  if (tiltElement && typeof VanillaTilt !== 'undefined') {
+  
+  // Only initialize the 3D tilt engine on desktop screens to save mobile CPU
+  if (tiltElement && typeof VanillaTilt !== 'undefined' && window.matchMedia("(min-width: 769px)").matches) {
       VanillaTilt.init(tiltElement, {
           max: 15,          // max tilt rotation (degrees)
           speed: 1000,      // Speed of the enter/exit transition
@@ -451,6 +459,7 @@ document.addEventListener('DOMContentLoaded', function() {
       menuItem[i].style.color = '#ff4444';
     }
   }
+
 
   // --- 7. Lenis Smooth Anchor Routing ---
   

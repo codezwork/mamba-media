@@ -1598,3 +1598,18 @@ html.lenis, html.lenis body {
     display: none;
   }
 }
+
+/* ============================================ */
+/* CUSTOM DROPDOWN HTML5 VALIDATION FIX         */
+/* ============================================ */
+.hidden-validation-select {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none; /* Prevents it from accidentally intercepting clicks */
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}

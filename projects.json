@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "title": "TATA Mine Navigation",
+    "title": "Mine Navigation Web App",
     "category": "saas",
     "tags": ["Geospatial", "Leaflet.js", "KML Parsing"],
     "imageId": "12r9wpK92mXKIZiP5IOykCjkomeIh1xNe",
     "fullImageId": "12r9wpK92mXKIZiP5IOykCjkomeIh1xNe",
     "excerpt": "A geospatial navigation tool tailored for complex mining site visitors.",
-    "details": "Designed to solve navigation challenges for senior visitors at TATA Steel mines. Unlike standard trackers, this project focused on mapping. I implemented the Leaflet Omnivore library to parse raw KML map files, creating a Google Maps-style interface.",
+    "details": "Designed to solve navigation challenges for senior visitors at Steel mines. Unlike standard trackers, this project focused on mapping. I implemented the Leaflet Omnivore library to parse raw KML map files, creating a Google Maps-style interface.",
     "testimonial": {
       "author": "Operations Lead, TATA Steel",
       "imageId": "1RaypnY6XjJvHMWHVdOiwYIGFoILGy0l2",

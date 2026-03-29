@@ -9,7 +9,7 @@
     "excerpt": "A geospatial navigation tool tailored for complex mining site visitors.",
     "details": "Designed to solve navigation challenges for senior visitors at Steel mines. Unlike standard trackers, this project focused on mapping. I implemented the Leaflet Omnivore library to parse raw KML map files, creating a Google Maps-style interface.",
     "testimonial": {
-      "author": "Operations Lead, TATA Steel",
+      "author": "Area Manager, Steel Mine Location",
       "imageId": "1RaypnY6XjJvHMWHVdOiwYIGFoILGy0l2",
       "text": "This completely transformed how our visitors navigate the complex zones. The interface is incredibly intuitive."
     }

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.mambaclub.site/</loc>
+    <loc>https://mambamedia.in/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.mambaclub.site/portfolio</loc>
+    <loc>https://mambamedia.in/portfolio</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.mambaclub.site/team</loc>
+    <loc>https://mambamedia.in/team</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.mambaclub.site/contact</loc>
+    <loc>https://mambamedia.in/contact</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>

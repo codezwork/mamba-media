@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.mambaclub.site/sitemap.xml
+
+Sitemap: https://mambamedia.in/sitemap.xml

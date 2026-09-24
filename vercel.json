@@ -1,4 +1,39 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mambaclub.site"
+        }
+      ],
+      "destination": "https://mambamedia.in/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mambaclub.site"
+        }
+      ],
+      "destination": "https://mambamedia.in/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mambamedia.in"
+        }
+      ],
+      "destination": "https://mambamedia.in/:path*",
+      "permanent": true
+    }
+  ]
 }

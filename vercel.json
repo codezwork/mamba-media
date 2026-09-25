@@ -23,17 +23,6 @@
       ],
       "destination": "https://mambamedia.in/:path*",
       "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.mambamedia.in"
-        }
-      ],
-      "destination": "https://mambamedia.in/:path*",
-      "permanent": true
     }
   ]
 }
